@@ -1,87 +1,361 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Мой сайт</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #0f172a;
-            color: white;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        header {
-            padding: 60px 20px;
-            text-align: center;
-            background: #111827;
-        }
+<title>Дарья Трутанова | Портфолио</title>
 
-        header h1 {
-            font-size: 42px;
-            margin-bottom: 10px;
-        }
+<style>
 
-        header p {
-            color: #94a3b8;
-        }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        section {
-            max-width: 900px;
-            margin: auto;
-            padding: 40px 20px;
-        }
+html{
+    scroll-behavior:smooth;
+}
 
-        .card {
-            background: #1f2937;
-            padding: 20px;
-            margin: 15px 0;
-            border-radius: 12px;
-        }
+body{
+    font-family:'Segoe UI',sans-serif;
+    background:#fffaf8;
+    color:#4d4d4d;
+    line-height:1.6;
+}
 
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            background: #3b82f6;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            margin-top: 10px;
-        }
+/* Шапка */
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            color: #64748b;
-        }
-    </style>
+header{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:30px;
+    background:linear-gradient(
+        135deg,
+        #f8ebe8,
+        #f6f2ff,
+        #edf6ff
+    );
+}
+
+.avatar{
+    width:230px;
+    height:230px;
+    border-radius:50%;
+    object-fit:cover;
+    border:8px solid white;
+    box-shadow:0 15px 40px rgba(0,0,0,0.12);
+    margin-bottom:25px;
+}
+
+header h1{
+    font-size:3rem;
+    margin-bottom:10px;
+}
+
+.nickname{
+    color:#a27ea5;
+    font-size:1.2rem;
+    margin-bottom:20px;
+}
+
+.hero-text{
+    max-width:700px;
+    font-size:1.1rem;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:30px;
+    padding:14px 28px;
+    text-decoration:none;
+    color:white;
+    background:#c6a7d3;
+    border-radius:30px;
+    transition:0.3s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+/* Навигация */
+
+nav{
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:white;
+    box-shadow:0 2px 10px rgba(0,0,0,.05);
+}
+
+nav ul{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    list-style:none;
+    padding:18px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#666;
+    font-weight:600;
+}
+
+/* Секции */
+
+section{
+    max-width:1100px;
+    margin:auto;
+    padding:90px 25px;
+}
+
+h2{
+    text-align:center;
+    margin-bottom:40px;
+    color:#7f6a82;
+    font-size:2rem;
+}
+
+/* Карточки */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,.05);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card h3{
+    margin-bottom:10px;
+}
+
+/* Галерея */
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:15px;
+}
+
+.gallery img{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+    border-radius:20px;
+    transition:.3s;
+}
+
+.gallery img:hover{
+    transform:scale(1.03);
+}
+
+/* Факты */
+
+.facts{
+    background:white;
+    border-radius:20px;
+    padding:30px;
+    box-shadow:0 5px 15px rgba(0,0,0,.05);
+}
+
+.facts ul{
+    padding-left:20px;
+}
+
+.facts li{
+    margin-bottom:10px;
+}
+
+/* Подвал */
+
+footer{
+    text-align:center;
+    padding:40px;
+    background:#f7f0f8;
+    margin-top:40px;
+}
+
+footer p{
+    margin:10px 0;
+}
+
+@media(max-width:768px){
+
+header h1{
+    font-size:2.2rem;
+}
+
+.avatar{
+    width:180px;
+    height:180px;
+}
+
+nav ul{
+    flex-wrap:wrap;
+}
+
+}
+
+</style>
 </head>
 
 <body>
 
 <header>
-    <h1>Мой сайт</h1>
-    <p>Сделан для учебного задания</p>
+
+<img src="images/avatar.jpg" class="avatar" alt="Дарья">
+
+<h1>Дарья Трутанова</h1>
+
+<p class="nickname">truaria • 21 год</p>
+
+<p class="hero-text">
+Студентка Политеха в Санкт-Петербурге, фотограф и человек,
+который любит сохранять красивые моменты жизни через объектив камеры.
+</p>
+
+<a href="#about" class="btn">Узнать больше</a>
+
 </header>
 
-<section>
-    <div class="card">
-        <h2>О проекте</h2>
-        <p>
-            Это простой лендинг, созданный с использованием HTML и CSS.
-            Он демонстрирует базовую структуру сайта.
-        </p>
-    </div>
-   
-    <div class="card">
-        <h2>Контакты</h2>
-        <p>Email: dasatrutanova@gmail.com</p>
-        <a class="btn" href="#">Написать</a>
-    </div>
+<nav>
+<ul>
+<li><a href="#about">Обо мне</a></li>
+<li><a href="#hobby">Увлечения</a></li>
+<li><a href="#gallery">Галерея</a></li>
+<li><a href="#facts">Факты</a></li>
+<li><a href="#contacts">Контакты</a></li>
+</ul>
+</nav>
+
+<section id="about">
+
+<h2>Обо мне</h2>
+
+<p style="text-align:center; max-width:800px; margin:auto;">
+Меня зовут Дарья. Я учусь в Санкт-Петербургском Политехническом
+университете и работаю оператором ЭВМ в поликлинике.
+
+В свободное время занимаюсь фотографией, обработкой снимков
+и созданием коротких видеороликов. Мне нравится замечать детали,
+передавать настроение кадра и сохранять искренние эмоции людей.
+</p>
+
+</section>
+
+<section id="hobby">
+
+<h2>Мои интересы</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>📸 Фотография</h3>
+<p>
+
+Съёмка портретов, прогулочных фотосессий и атмосферных кадров.
+</p>
+</div>
+
+<div class="card">
+<h3>🎬 Монтаж Reels</h3>
+<p>
+Создание коротких видео и визуальных историй.
+</p>
+</div>
+
+<div class="card">
+<h3>🚗 Путешествия</h3>
+<p>
+Поездки по Ленинградской области и открытие новых мест.
+</p>
+</div>
+
+<div class="card">
+<h3>☕ Уютные вечера</h3>
+<p>
+Люблю спокойную атмосферу, прогулки и время с близкими людьми.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="gallery">
+
+<h2>Галерея</h2>
+
+<div class="gallery">
+
+<img src="images/photo1.jpg" alt="">
+<img src="images/photo2.jpg" alt="">
+<img src="images/photo3.jpg" alt="">
+<img src="images/photo4.jpg" alt="">
+
+</div>
+
+</section>
+
+<section id="facts">
+
+<h2>Немного обо мне</h2>
+
+<div class="facts">
+
+<ul>
+<li>Студентка Политеха в Санкт-Петербурге.</li>
+<li>Работаю оператором ЭВМ.</li>
+<li>Увлекаюсь фотографией и видеомонтажом.</li>
+<li>Люблю прогулки и небольшие путешествия.</li>
+<li>Ценю доброту, искренность и надёжность.</li>
+<li>У меня есть шпиц по имени Лёва.</li>
+<li>Люблю сохранять важные моменты жизни на фотографиях.</li>
+</ul>
+
+</div>
+
+</section>
+
+<section id="contacts">
+
+<h2>Контакты</h2>
+
+<p style="text-align:center;">
+Instagram: @truaria
+<br><br>
+Санкт-Петербург, Россия
+</p>
+
 </section>
 
 <footer>
-    © 2026 Мой сайт
+
+<p>© 2026 Дарья Трутанова</p>
+
+<p>
+Сайт-визитка, посвящённый творчеству, фотографии и любимым моментам жизни.
+</p>
+
 </footer>
 
 </body>
